@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 7 Desktop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== DESKTOP ===== -->
+<div id="desktop">
+
+  <!-- Desktop Icons -->
+  <div id="desktop-icons">
+
+    <!-- Bhatti User Folder Icon -->
+    <div class="desktop-icon" onclick="selectIcon(this)" ondblclick="alert('Bhatti - User Folder')">
+      <div style="width:48px;height:48px;margin-bottom:5px;">
+        <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="13" width="46" height="31" rx="3" fill="#F5C518"/>
+          <rect x="1" y="9" width="19" height="7" rx="2" fill="#E6A800"/>
+          <rect x="2" y="14" width="44" height="29" rx="2" fill="#FFD84D"/>
+          <circle cx="24" cy="21" r="6" fill="#A0522D"/>
+          <circle cx="24" cy="20" r="5" fill="#C68642"/>
+          <ellipse cx="24" cy="34" rx="10" ry="7" fill="#A0522D"/>
+          <ellipse cx="24" cy="33" rx="8" ry="5.5" fill="#C68642"/>
+        </svg>
+      </div>
+      <div class="icon-label">Bhatti</div>
+    </div>
+
+    <!-- This PC -->
+    <div class="desktop-icon" ondblclick="openApp('explorer')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🖥️</div>
+      <div class="icon-label">This PC</div>
+    </div>
+
+    <!-- Recycle Bin -->
+    <div class="desktop-icon" ondblclick="openApp('recycle')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🗑️</div>
+      <div class="icon-label">Recycle Bin</div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="desktop-icon" ondblclick="openApp('controlpanel')" onclick="selectIcon(this)">
+      <div class="icon-emoji">⚙️</div>
+      <div class="icon-label">Control Panel</div>
+    </div>
+
+    <div class="desktop-icon" ondblclick="openApp('chrome')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🌐</div>
+      <div class="icon-label">Google Chrome</div>
+    </div>
+
+    <div class="desktop-icon" ondblclick="openApp('edge')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🔵</div>
+      <div class="icon-label">Microsoft Edge</div>
+    </div>
+
+    <div class="desktop-icon" ondblclick="openApp('notepad')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🗒️</div>
+      <div class="icon-label">Notepad</div>
+    </div>
+
+    <div class="desktop-icon" ondblclick="openApp('calculator')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🖩</div>
+      <div class="icon-label">Calculator</div>
+    </div>
+
+    <div class="desktop-icon" ondblclick="openApp('mediaplayer')" onclick="selectIcon(this)">
+      <div class="icon-emoji">🎵</div>
+      <div class="icon-label">Media Player</div>
+    </div>
+
+  </div><!-- /desktop-icons -->
+
+</div><!-- /desktop -->
+
+<!-- ===== TASKBAR ===== -->
+<div id="taskbar">
+  <!-- Start Button -->
+  <button id="start-btn" onclick="toggleStartMenu()">
+    <div class="start-orb">
+      <span>⊞</span>
+    </div>
+  </button>
+
+  <!-- Open App Buttons -->
+  <div id="taskbar-apps"></div>
+
+  <!-- System Tray -->
+  <div id="system-tray">
+    <span title="Network">🌐</span>
+    <span title="Volume">🔊</span>
+    <div id="clock">
+      <div class="time" id="clock-time">00:00</div>
+      <div class="date" id="clock-date">1/1/2024</div>
+    </div>
+  </div>
+
+  <!-- Show Desktop -->
+  <div id="show-desktop" title="Show Desktop" onclick="showDesktop()"></div>
+</div>
+
+<!-- ===== START MENU ===== -->
+<div id="start-menu">
+  <div class="start-menu-header">
+    <div class="user-avatar" style="background:linear-gradient(135deg,#F5C518,#E6A800);font-size:24px;">🧑</div>
+    <div class="user-name">Bhatti</div>
+  </div>
+  <div class="start-menu-body">
+    <!-- Left: Programs -->
+    <div class="start-left">
+      <div class="start-item" onclick="openApp('chrome'); closeStartMenu()">
+        <span class="s-icon">🌐</span> Google Chrome
+      </div>
+      <div class="start-item" onclick="openApp('edge'); closeStartMenu()">
+        <span class="s-icon">🔵</span> Microsoft Edge
+      </div>
+      <div class="start-item" onclick="openApp('explorer'); closeStartMenu()">
+        <span class="s-icon">📁</span> File Explorer
+      </div>
+      <div class="start-item" onclick="openApp('notepad'); closeStartMenu()">
+        <span class="s-icon">🗒️</span> Notepad
+      </div>
+      <div class="start-item" onclick="openApp('calculator'); closeStartMenu()">
+        <span class="s-icon">🖩</span> Calculator
+      </div>
+      <div class="start-item" onclick="openApp('mediaplayer'); closeStartMenu()">
+        <span class="s-icon">🎵</span> Media Player
+      </div>
+      <div class="start-separator"></div>
+      <div class="start-item" onclick="openApp('controlpanel'); closeStartMenu()">
+        <span class="s-icon">⚙️</span> Control Panel
+      </div>
+      <div class="start-item" onclick="openApp('recycle'); closeStartMenu()">
+        <span class="s-icon">🗑️</span> Recycle Bin
+      </div>
+    </div>
+
+    <!-- Right: System Links -->
+    <div class="start-right">
+      <div class="start-item" onclick="openApp('explorer'); closeStartMenu()">
+        <span class="s-icon">👤</span> Documents
+      </div>
+      <div class="start-item" onclick="openApp('explorer'); closeStartMenu()">
+        <span class="s-icon">🖼️</span> Pictures
+      </div>
+      <div class="start-item" onclick="openApp('explorer'); closeStartMenu()">
+        <span class="s-icon">🎵</span> Music
+      </div>
+      <div class="start-separator"></div>
+      <div class="start-item" onclick="openApp('controlpanel'); closeStartMenu()">
+        <span class="s-icon">⚙️</span> Settings
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="start-footer">
+    <button class="start-footer-btn" onclick="alert('Shutting down...')">⏻ Shut Down</button>
+  </div>
+</div>
+
+<!-- ===== CONTEXT MENU ===== -->
+<div id="context-menu">
+  <div class="ctx-item" onclick="hideCtx(); alert('Personalization opened!')">🎨 Personalize</div>
+  <div class="ctx-item" onclick="hideCtx(); openApp('controlpanel')">⚙️ Control Panel</div>
+  <div class="ctx-sep"></div>
+  <div class="ctx-item" onclick="hideCtx()">🔃 Refresh</div>
+  <div class="ctx-item" onclick="hideCtx(); openApp('explorer')">📁 Open File Explorer</div>
+  <div class="ctx-sep"></div>
+  <div class="ctx-item" onclick="hideCtx(); openApp('notepad')">🗒️ New Text Document</div>
+</div>
+
+<!-- ===== WINDOW TEMPLATES (JS renders into these) ===== -->
+<div id="windows-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
